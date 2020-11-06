@@ -16,14 +16,20 @@ class StringCalculator{
         String[] values =numbers.split(",");
         if(values.length == 0){
             return 0;
-        } else if(values.length == 1){
-            return Integer.parseInt(values[0]);
-        } else if(values.length == 2){
-            return Integer.parseInt(values[0])+Integer.parseInt(values[1]);
         }
-        else{
-            return Integer.parseInt(values[0])+Integer.parseInt(values[1])+Integer.parseInt(values[2]);
+        int result = 0;
+        for(String s : values){
+            result += Integer.parseInt(s);
         }
+        return result;
+//        else if(values.length == 1){
+//            return Integer.parseInt(values[0]);
+//        } else if(values.length == 2){
+//            return Integer.parseInt(values[0])+Integer.parseInt(values[1]);
+//        }
+//        else{
+//            return Integer.parseInt(values[0])+Integer.parseInt(values[1])+Integer.parseInt(values[2]);
+//        }
 //        for(String s : operators) {
 //            System.out.print(s+ " ");
 //        }
