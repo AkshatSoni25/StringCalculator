@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         StringCalculator sc = new StringCalculator();
-        int ans = sc.Add("45,34\n" +
+        int ans = sc.Add("45!@#$%^&*(),[************][%%]" +
+                "34\n" +
                 "56");
         if(ans >= 0){
             System.out.println(ans);
@@ -26,7 +27,7 @@ class StringCalculator{
         if(numbers.isEmpty()){
             return 0;
         }
-        String[] values = numbers.split("[, \n]+");
+        String[] values = numbers.split("[^\\d]+");
         int result = 0;
         List<Integer> negatives = new ArrayList<>();
         for(String s : values){
