@@ -60,33 +60,6 @@ class StringCalculator{
         }
         return result;
     }
-
-
-
-
-
-
-//        String[] values = numbers.split("[^\\d]+");
-//        int result = 0;
-//        List<Integer> negatives = new ArrayList<>();
-//        for(String s : values){
-//            if(Integer.parseInt(s)<0){
-//                negatives.add(Integer.parseInt(s));
-//            }
-//            if(Integer.parseInt(s) >= 1000){
-//                s = "0";
-//            }
-//            result += Integer.parseInt(s);
-//        }
-//        if (!negatives.isEmpty()) {
-//            System.out.print("Negatives not allowed. The negative numbers are: ");
-//            for (int i : negatives) {
-//                System.out.print(i+" ");
-//            }
-//            return -1;
-//        }
-//        return result;
-//    }
     public int GetCalledCount(){
         return count;
     }
