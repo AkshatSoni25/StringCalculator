@@ -7,8 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         StringCalculator sc = new StringCalculator();
-        int ans = sc.Add("45,-34\n" +
-                "-67");
+        int ans = sc.Add("45,34,1000");
         if(ans >= 0){
             System.out.println(ans);
         }
@@ -26,6 +25,9 @@ class StringCalculator{
         for(String s : values){
             if(Integer.parseInt(s)<0){
                 negatives.add(Integer.parseInt(s));
+            }
+            if(Integer.parseInt(s) >= 1000){
+                s = "0";
             }
             result += Integer.parseInt(s);
         }
