@@ -6,7 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
         StringCalculator sc = new StringCalculator();
-        System.out.println(sc.Add(""));
+        System.out.println(sc.Add("45\n" +
+                "78\n" +
+                "34"));
     }
 }
 
@@ -15,7 +17,7 @@ class StringCalculator{
         if(numbers.isEmpty()){
             return 0;
         }
-        String[] values = numbers.split(",");
+        String[] values = numbers.split("[, \n]");
         int result = 0;
         for(String s : values){
             result += Integer.parseInt(s);
@@ -28,13 +30,6 @@ class StringCalculator{
 //        }
 //        else{
 //            return Integer.parseInt(values[0])+Integer.parseInt(values[1])+Integer.parseInt(values[2]);
-//        }
-//        for(String s : operators) {
-//            System.out.print(s+ " ");
-//        }
-//        System.out.println();
-//        for(String s : operands) {
-//            System.out.print(s+ " ");
 //        }
 
     }
