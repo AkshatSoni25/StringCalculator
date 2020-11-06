@@ -1,14 +1,17 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         StringCalculator sc = new StringCalculator();
-        System.out.println(sc.Add("45\n" +
-                "78\n" +
-                "34"));
+        int ans = sc.Add("45,-34\n" +
+                "-67");
+        if(ans >= 0){
+            System.out.println(ans);
+        }
     }
 }
 
@@ -19,8 +22,19 @@ class StringCalculator{
         }
         String[] values = numbers.split("[, \n]");
         int result = 0;
+        List<Integer> negatives = new ArrayList<>();
         for(String s : values){
+            if(Integer.parseInt(s)<0){
+                negatives.add(Integer.parseInt(s));
+            }
             result += Integer.parseInt(s);
+        }
+        if (!negatives.isEmpty()) {
+            System.out.print("Negatives not allowed. The negative numbers are: ");
+            for (int i : negatives) {
+                System.out.print(i+" ");
+            }
+            return -1;
         }
         return result;
 //        else if(values.length == 1){
