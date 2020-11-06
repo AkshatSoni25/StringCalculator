@@ -6,17 +6,16 @@ public class Main {
 
     public static void main(String[] args) {
         StringCalculator sc = new StringCalculator();
-        System.out.println(sc.Add("23,87,67"));
+        System.out.println(sc.Add(""));
     }
 }
 
 class StringCalculator{
     public int Add(String numbers){
-//        int len = numbers.length();
-        String[] values =numbers.split(",");
-        if(values.length == 0){
+        if(numbers.isEmpty()){
             return 0;
         }
+        String[] values = numbers.split(",");
         int result = 0;
         for(String s : values){
             result += Integer.parseInt(s);
